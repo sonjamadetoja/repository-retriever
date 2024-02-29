@@ -1,11 +1,14 @@
+import os
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 import requests
 from state_generator import generate_random_string
 
 
-client_id = ""
-client_secret = ""
+load_dotenv()
+client_id = os.environ.get("CLIENT_ID")
+client_secret = os.environ.get("CLIENT_SECRET")
 
 login_url = "https://github.com/login/oauth/authorize"
 access_token_url = "https://github.com/login/oauth/access_token"
