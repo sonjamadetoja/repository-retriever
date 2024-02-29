@@ -1,12 +1,13 @@
+from uvicorn import run
+from app import app as fastapi_app
 
 
 def main():
-    pass
 
-# ask for users credetials
-# call for authentication & receive token
-# call for repositories retrieval (using token) and receive data
-# return data
+    def start_fastapi_app():
+        run(fastapi_app, host="127.0.0.1", port=8000)
 
-if __name__ = "__main__":
+    start_fastapi_app()
+
+if __name__ == "__main__":
     main()
